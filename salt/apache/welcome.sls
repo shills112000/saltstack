@@ -1,3 +1,6 @@
+include:
+  - apache
+
 {% set name = salt.pillar.get('name') %}
 
 
