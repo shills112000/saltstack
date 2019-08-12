@@ -12,4 +12,11 @@ start_apache:
 
 # Start on boot if centos machine
     - enable: True
+    - watch:       
+      - file: some_config   # restart service if this file ever changes
 
+
+some_config:
+  file.managed:
+    - name: /tmp/foo
+    - contents: boo
